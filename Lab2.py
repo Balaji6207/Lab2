@@ -9,6 +9,7 @@ def calc_average_temperature(num):
     avg = 0
     for i in num:
         avg += i/len(num)     
+              
     return avg
 def calc_min_max_temperature(num):
     min = num[0]
@@ -27,10 +28,14 @@ def calc_median_temperature(num):
         median = (num[len(num)//2])  
     return median      
 
+def main():
+    display_main_menu()
+    num = get_user_input()
+    print("Average temperature is " + str(calc_average_temperature(num)))
+    print("Minimum temperature is " + str(calc_min_max_temperature(num)[0]))       
+    print("Maximum temperature is " + str(calc_min_max_temperature(num)[1]))  
+    print("Median temperature is " + str(calc_median_temperature(num)))
+ 
 
-display_main_menu()
-num = get_user_input()
-print("Average temperature is " + str(calc_average_temperature(num)))
-print("Minimum temperature is " + str(calc_min_max_temperature(num)[0]))       
-print("Maximum temperature is " + str(calc_min_max_temperature(num)[1]))  
-print("Median temperature is " + str(calc_median_temperature(num)))
+if __name__ == "__main__":
+    main()
